@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/antcodernez/asynchronism/issues"
   },
-  "homepage": "https://github.com/antcodernez/asynchronism#readme"
+  "homepage": "https://github.com/antcodernez/asynchronism#readme",
+  "dependencies": {
+    "xmlhttprequest": "^1.8.0"
+  }
 }
