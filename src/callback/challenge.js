@@ -57,7 +57,7 @@ fetchData(`${API}/products`, (error1, data1) => {
     
     //Voy a llamar a un producto en particular, no products, ese valor se encuentra en data1, sobre el primer elemento de un array que yo obtengo
     //(`${API}/products/${data1[0].id}) Así voy a realizar mi segunda petición, pero del primer elemento del array que me trajo la primer petición
-    fetchData(`${API}/products/${data1[0].id}`, (error2, data2) => {
+    fetchData(`${API}/products/${data1[1].id}`, (error2, data2) => {
         if(error2) return console.error(error2);
 
         //Puedo anidar otro llamado de fetchData() esperando a obtener la infomación de data2 y así usarla para este mismo
@@ -66,7 +66,7 @@ fetchData(`${API}/products`, (error1, data1) => {
             //Hay que tener cuidado con anidar multiples llamadas
             if(error3) return console.error(error3);
             // Quiero mostrar la información en consecuencia de cada una de las peticiones, quiero el valor de los opjetos que traje  
-            console.log(data1[0]);
+            console.log(data1[1]);
             console.log(data2.title);
             console.log(data3.name);
             //Estoy haciendo mis 3 peticiones de manera encadenada con lo que viene siendo mi lógica de mis callbacks
@@ -74,4 +74,3 @@ fetchData(`${API}/products`, (error1, data1) => {
         }) //Si hago este acceso a datos, entrando a cada uno de los elementos de un objeto podemos tener detalles en donde si me equivoco con el nombre, en este caso ID y le ponga "IDS", puede que no lo encuentre o no este todavía presente, para solucionar esto, puedo usar un valor dentro de JS llamado optional chaiging, así no me causaría un error, es una opción. >>Ver curso ECMACScript6+     
     });
 });
-
